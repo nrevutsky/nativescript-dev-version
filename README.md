@@ -21,7 +21,7 @@ Then, specify and maintain the desired release version on the `./package.json` f
   "nativescript": {
     "id": "org.nativescript.MySampleApp",
     "version": "1.2.3",
-    "versionNumber": "1.2"
+    "versionNumber": "12"
     ...
   },
   ...
@@ -33,7 +33,7 @@ or:
 ```json
 {
   "version": "1.2.3",
-  "versionNumber": "1.2"
+  "versionNumber": "12"
   ...
 }
 ```
@@ -44,9 +44,9 @@ On iOS, your `Info.plist` will get:
 
 ```
 <key>CFBundleShortVersionString</key>
-<string>1.2</string>
-<key>CFBundleVersion</key>
 <string>1.2.3</string>
+<key>CFBundleVersion</key>
+<string>12</string>
 ```
 
 On Android, `AndroidManifest.xml` will have:
@@ -54,4 +54,35 @@ On Android, `AndroidManifest.xml` will have:
 ```
 <manifest
   (...) android:versionCode="12102003" android:versionName="1.2.3"
+```
+
+If versionNumber is mission in the `./package.json` file - it will be used 'YYYYMMDD', for examle at `2020 Jan 15`:
+
+```json
+{
+  "nativescript": {
+    "id": "org.nativescript.MySampleApp",
+    "version": "1.2.3"
+    ...
+  },
+  ...
+}
+```
+
+When running `tns prepare ...` the hooks will take care of the native resources.
+
+On iOS, your `Info.plist` will get:
+
+```
+<key>CFBundleShortVersionString</key>
+<string>1.2.3</string>
+<key>CFBundleVersion</key>
+<string>20200115</string>
+```
+
+On Android, `AndroidManifest.xml` will have:
+
+```
+<manifest
+  (...) android:versionCode="20200115" android:versionName="1.2.3"
 ```
