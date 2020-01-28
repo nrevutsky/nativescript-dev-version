@@ -56,7 +56,7 @@ On Android, `AndroidManifest.xml` will have:
   (...) android:versionCode="12102003" android:versionName="1.2.3"
 ```
 
-If versionNumber is mission in the `./package.json` file - it will be used 'YYYYMMDD', for examle at `2020 Jan 15`:
+If versionNumber is mission in the `./package.json` file - it will be used 'YYYYMMDDHH', for examle at `2020 Jan 15 16:45`:
 
 ```json
 {
@@ -77,12 +77,12 @@ On iOS, your `Info.plist` will get:
 <key>CFBundleShortVersionString</key>
 <string>1.2.3</string>
 <key>CFBundleVersion</key>
-<string>20200115</string>
+<string>2020011516</string>
 ```
 
 On Android, `AndroidManifest.xml` will have:
 
 ```
 <manifest
-  (...) android:versionCode="20200115" android:versionName="1.2.3"
+  (...) android:versionCode="2020011516" android:versionName="1.2.3"
 ```
